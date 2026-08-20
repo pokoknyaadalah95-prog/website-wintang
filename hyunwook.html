@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hyun-wook Archive</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    color:#633c50;
+    min-height:100vh;
+    overflow-x:hidden;
+
+    background:
+    radial-gradient(circle at 5% 10%,#ffd4e6 0%,transparent 28%),
+    radial-gradient(circle at 95% 85%,#f5c5da 0%,transparent 30%),
+    linear-gradient(135deg,#fff9fc,#ffeaf3,#fff);
+}
+
+/* BACKGROUND */
+
+.blur{
+    position:fixed;
+    border-radius:50%;
+    filter:blur(15px);
+    opacity:.45;
+    z-index:-5;
+}
+
+.blur1{
+    width:320px;
+    height:320px;
+    background:#ffc8df;
+    top:-120px;
+    left:-100px;
+}
+
+.blur2{
+    width:350px;
+    height:350px;
+    background:#f4bfd7;
+    right:-130px;
+    bottom:-120px;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    z-index:100;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+
+    width:90%;
+    max-width:850px;
+
+    display:flex;
+    justify-content:center;
+    gap:28px;
+
+    padding:13px 20px;
+
+    background:rgba(255,255,255,.58);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:50px;
+
+    box-shadow:0 10px 35px rgba(164,84,119,.12);
+}
+
+nav a{
+    text-decoration:none;
+    color:#7b4961;
+    font-size:12px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#d45f8c;
+}
+
+/* CONTAINER */
+
+.container{
+    width:92%;
+    max-width:1050px;
+    margin:auto;
+    padding-top:110px;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:65px 20px;
+
+    background:rgba(255,255,255,.52);
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:38px;
+
+    box-shadow:0 20px 60px rgba(170,77,117,.12);
+}
+
+.small-title{
+    font-size:10px;
+    letter-spacing:5px;
+    color:#ce7198;
+    text-transform:uppercase;
+}
+
+.hero h1{
+    font-family:'DM Serif Display',serif;
+    font-size:clamp(48px,9vw,82px);
+    font-weight:400;
+    color:#713e57;
+    margin:10px 0;
+}
+
+.hero p{
+    color:#9c6b81;
+    font-size:13px;
+}
+
+/* ABOUT */
+
+.about{
+    margin-top:25px;
+    padding:32px;
+
+    background:rgba(255,255,255,.58);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:28px;
+
+    box-shadow:0 15px 45px rgba(165,76,112,.1);
+}
+
+.about h2,
+.section-title h2{
+    font-family:'DM Serif Display',serif;
+    font-size:34px;
+    font-weight:400;
+    color:#713e57;
+}
+
+.about p{
+    margin-top:12px;
+    color:#8e6476;
+    font-size:13px;
+    line-height:1.9;
+}
+
+/* INFO GRID */
+
+.info-grid{
+    margin-top:22px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.info{
+    padding:25px;
+
+    background:rgba(255,255,255,.55);
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.8);
+
+    transition:.3s;
+}
+
+.info:hover{
+    transform:translateY(-6px);
+}
+
+.info span{
+    font-size:9px;
+    letter-spacing:3px;
+    color:#cf789b;
+}
+
+.info h3{
+    font-family:'DM Serif Display',serif;
+    font-size:23px;
+    font-weight:400;
+    color:#713e57;
+    margin-top:7px;
+}
+
+.info p{
+    margin-top:5px;
+    color:#8e6476;
+    font-size:11px;
+}
+
+/* SECTION */
+
+.section-title{
+    text-align:center;
+    margin:55px 0 25px;
+}
+
+.section-title p{
+    color:#aa7188;
+    font-size:12px;
+    margin-top:5px;
+}
+
+/* DRAMA GRID */
+
+.drama-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.drama{
+    padding:28px;
+
+    background:rgba(255,255,255,.58);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:27px;
+
+    box-shadow:0 15px 40px rgba(165,76,112,.1);
+
+    transition:.4s;
+}
+
+.drama:hover{
+    transform:translateY(-7px);
+}
+
+.year{
+    font-size:9px;
+    letter-spacing:3px;
+    color:#cf789b;
+}
+
+.drama h3{
+    font-family:'DM Serif Display',serif;
+    font-size:28px;
+    font-weight:400;
+    color:#713e57;
+    margin:7px 0;
+}
+
+.role{
+    display:inline-block;
+
+    padding:5px 12px;
+
+    background:#f9dce8;
+    color:#a55c7a;
+
+    border-radius:20px;
+
+    font-size:9px;
+}
+
+.drama p{
+    margin-top:12px;
+    font-size:11px;
+    line-height:1.8;
+    color:#8e6476;
+}
+
+/* TIMELINE */
+
+.timeline{
+    position:relative;
+    padding-left:25px;
+}
+
+.timeline::before{
+    content:"";
+
+    position:absolute;
+    left:5px;
+    top:0;
+    bottom:0;
+
+    width:1px;
+
+    background:#e5abc2;
+}
+
+.timeline-item{
+    position:relative;
+    margin-bottom:25px;
+}
+
+.timeline-item::before{
+    content:"";
+
+    position:absolute;
+
+    left:-24px;
+    top:5px;
+
+    width:9px;
+    height:9px;
+
+    border-radius:50%;
+
+    background:#d9799e;
+
+    box-shadow:0 0 0 5px #fce4ee;
+}
+
+.timeline-item h3{
+    font-family:'DM Serif Display',serif;
+    font-size:23px;
+    color:#713e57;
+    font-weight:400;
+}
+
+.timeline-item p{
+    margin-top:4px;
+    color:#8e6476;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* FAVORITES */
+
+.favorite-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:12px;
+
+    padding:30px;
+
+    background:rgba(255,255,255,.58);
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:28px;
+}
+
+.tag{
+    padding:11px 18px;
+
+    border-radius:30px;
+
+    background:linear-gradient(
+        135deg,
+        #ffe1ec,
+        #f7c8dc
+    );
+
+    color:#8f4f6b;
+
+    font-size:11px;
+
+    transition:.3s;
+}
+
+.tag:hover{
+    transform:translateY(-4px);
+}
+
+/* QUOTE */
+
+.quote{
+    margin:50px 0;
+
+    padding:55px 25px;
+
+    text-align:center;
+
+    background:rgba(255,255,255,.58);
+    backdrop-filter:blur(16px);
+
+    border:1px solid rgba(255,255,255,.85);
+    border-radius:32px;
+
+    box-shadow:0 15px 45px rgba(165,76,112,.1);
+}
+
+.quote h2{
+    font-family:'DM Serif Display',serif;
+    font-size:36px;
+    font-weight:400;
+    line-height:1.4;
+    color:#814861;
+}
+
+.quote p{
+    margin-top:12px;
+    color:#ad718a;
+    font-size:12px;
+}
+
+/* FLOWERS */
+
+.flower{
+    position:fixed;
+    pointer-events:none;
+    z-index:-1;
+    opacity:.65;
+}
+
+/* TULIP */
+
+.tulip{
+    width:70px;
+    height:150px;
+    animation:sway 5s ease-in-out infinite;
+}
+
+.tulip .stem{
+    position:absolute;
+    width:5px;
+    height:85px;
+    background:#83a96f;
+    bottom:0;
+    left:34px;
+    border-radius:10px;
+}
+
+.tulip .leaf{
+    position:absolute;
+    width:45px;
+    height:18px;
+    background:#9fbd82;
+    border-radius:100% 0 100% 0;
+    bottom:30px;
+    left:5px;
+    transform:rotate(-25deg);
+}
+
+.tulip .leaf2{
+    position:absolute;
+    width:40px;
+    height:17px;
+    background:#91b276;
+    border-radius:0 100% 0 100%;
+    bottom:48px;
+    left:34px;
+    transform:rotate(25deg);
+}
+
+.tulip .petal{
+    position:absolute;
+    width:45px;
+    height:55px;
+    background:linear-gradient(145deg,#f59abd,#d95d8d);
+    border-radius:50% 50% 40% 40%;
+    top:15px;
+}
+
+.tulip .p1{
+    left:3px;
+    transform:rotate(-18deg);
+}
+
+.tulip .p2{
+    left:15px;
+    top:5px;
+    z-index:2;
+}
+
+.tulip .p3{
+    left:28px;
+    transform:rotate(18deg);
+}
+
+/* LILY */
+
+.lily{
+    width:90px;
+    height:150px;
+    animation:sway 6s ease-in-out infinite reverse;
+}
+
+.lily .stem{
+    position:absolute;
+    height:100px;
+    width:5px;
+    background:#82a96d;
+    left:42px;
+    bottom:0;
+}
+
+.lily .petal{
+    position:absolute;
+    width:42px;
+    height:72px;
+    background:linear-gradient(150deg,#fff,#f9c9dd);
+    border-radius:70% 20% 70% 20%;
+    top:8px;
+    left:25px;
+    transform-origin:bottom;
+}
+
+.lily .p1{transform:rotate(0deg);}
+.lily .p2{transform:rotate(60deg);}
+.lily .p3{transform:rotate(120deg);}
+.lily .p4{transform:rotate(180deg);}
+.lily .p5{transform:rotate(240deg);}
+.lily .p6{transform:rotate(300deg);}
+
+.lily .center{
+    position:absolute;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    background:#e7a24e;
+    top:45px;
+    left:35px;
+    z-index:3;
+}
+
+.flower1{
+    left:1%;
+    bottom:7%;
+}
+
+.flower2{
+    right:1%;
+    top:22%;
+    transform:scale(.8);
+}
+
+/* ANIMATION */
+
+@keyframes sway{
+    0%,100%{
+        transform:rotate(-3deg);
+    }
+
+    50%{
+        transform:rotate(5deg);
+    }
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#b17690;
+    font-size:11px;
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+        gap:15px;
+    }
+
+    nav a{
+        font-size:10px;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .drama-grid{
+        grid-template-columns:1fr;
+    }
+
+    .flower{
+        opacity:.4;
+        transform:scale(.6);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="blur blur1"></div>
+<div class="blur blur2"></div>
+
+
+<!-- TULIP -->
+
+<div class="flower tulip flower1">
+
+    <div class="petal p1"></div>
+    <div class="petal p2"></div>
+    <div class="petal p3"></div>
+
+    <div class="leaf"></div>
+    <div class="leaf2"></div>
+
+    <div class="stem"></div>
+
+</div>
+
+
+<!-- LILY -->
+
+<div class="flower lily flower2">
+
+    <div class="petal p1"></div>
+    <div class="petal p2"></div>
+    <div class="petal p3"></div>
+    <div class="petal p4"></div>
+    <div class="petal p5"></div>
+    <div class="petal p6"></div>
+
+    <div class="center"></div>
+
+    <div class="stem"></div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+    <a href="index.html">
+        Profile
+    </a>
+
+    <a href="#about">
+        About
+    </a>
+
+    <a href="#dramas">
+        Dramas
+    </a>
+
+    <a href="#career">
+        Career
+    </a>
+
+</nav>
+
+
+<div class="container">
+
+
+<!-- HERO -->
+
+<header class="hero">
+
+    <div class="small-title">
+        My Favorite Actor Archive
+    </div>
+
+    <h1>
+        Choi Hyun-wook
+    </h1>
+
+    <p>
+        actor · performer · storyteller
+    </p>
+
+</header>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="about">
+
+    <h2>
+        About Hyun-wook
+    </h2>
+
+    <p>
+        Choi Hyun-wook adalah aktor Korea Selatan yang
+        lahir pada 30 Januari 2002. Ia memulai karier
+        aktingnya melalui web drama
+        <i>Real:Time:Love</i> dan kemudian semakin dikenal
+        melalui berbagai drama populer.
+    </p>
+
+    <div class="info-grid">
+
+        <div class="info">
+
+            <span>
+                BORN
+            </span>
+
+            <h3>
+                30 January
+            </h3>
+
+            <p>
+                2002
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <span>
+                PROFESSION
+            </span>
+
+            <h3>
+                Actor
+            </h3>
+
+            <p>
+                Korean Actor
+            </p>
+
+        </div>
+
+
+        <div class="info">
+
+            <span>
+                EDUCATION
+            </span>
+
+            <h3>
+                Hanlim
+            </h3>
+
+            <p>
+                Hanlim Multi Art School
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- DRAMAS -->
+
+<section id="dramas">
+
+<div class="section-title">
+
+    <h2>
+        Drama Collection
+    </h2>
+
+    <p>
+        Some memorable roles from his acting journey
+    </p>
+
+</div>
+
+
+<div class="drama-grid">
+
+
+<div class="drama">
+
+    <span class="year">
+        2021
+    </span>
+
+    <h3>
+        Racket Boys
+    </h3>
+
+    <span class="role">
+        Na Woo-chan
+    </span>
+
+    <p>
+        Drama olahraga tentang kehidupan para
+        remaja yang tergabung dalam tim bulu tangkis.
+    </p>
+
+</div>
+
+
+<div class="drama">
+
+    <span class="year">
+        2022
+    </span>
+
+    <h3>
+        Twenty-Five Twenty-One
+    </h3>
+
+    <span class="role">
+        Moon Ji-woong
+    </span>
+
+    <p>
+        Salah satu peran yang membuat namanya semakin
+        dikenal. Ji-woong digambarkan sebagai siswa
+        populer dengan kepribadian yang menarik.
+    </p>
+
+</div>
+
+
+<div class="drama">
+
+    <span class="year">
+        2022
+    </span>
+
+    <h3>
+        Weak Hero Class 1
+    </h3>
+
+    <span class="role">
+        Ahn Soo-ho
+    </span>
+
+    <p>
+        Soo-ho merupakan sahabat yang berani dan
+        memiliki kemampuan bela diri dalam cerita
+        tentang persahabatan dan kehidupan sekolah.
+    </p>
+
+</div>
+
+
+<div class="drama">
+
+    <span class="year">
+        2023
+    </span>
+
+    <h3>
+        Twinkling Watermelon
+    </h3>
+
+    <span class="role">
+        Ha Yi-chan
+    </span>
+
+    <p>
+        Drama fantasi remaja dengan unsur musik
+        dan perjalanan waktu. Hyun-wook memerankan
+        Ha Yi-chan yang penuh energi.
+    </p>
+
+</div>
+
+
+<div class="drama">
+
+    <span class="year">
+        2023
+    </span>
+
+    <h3>
+        High Cookie
+    </h3>
+
+    <span class="role">
+        Seo Ho-soo
+    </span>
+
+    <p>
+        Drama dengan nuansa misteri yang menghadirkan
+        sisi akting Hyun-wook yang berbeda.
+    </p>
+
+</div>
+
+
+<div class="drama">
+
+    <span class="year">
+        2025
+    </span>
+
+    <h3>
+        My Dearest Nemesis
+    </h3>
+
+    <span class="role">
+        Ban Joo-yeon
+    </span>
+
+    <p>
+        Drama komedi romantis dengan karakter
+        yang memiliki sisi profesional dan personal
+        yang berbeda.
+    </p>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- CAREER -->
+
+<section id="career">
+
+<div class="section-title">
+
+    <h2>
+        Career Timeline
+    </h2>
+
+    <p>
+        A small journey through his acting career
+    </p>
+
+</div>
+
+
+<div class="about">
+
+<div class="timeline">
+
+
+<div class="timeline-item">
+
+    <h3>
+        2019 · Debut
+    </h3>
+
+    <p>
+        Memulai perjalanan akting melalui
+        web drama <i>Real:Time:Love</i>.
+    </p>
+
+</div>
+
+
+<div class="timeline-item">
+
+    <h3>
+        2021 · Growing
+    </h3>
+
+    <p>
+        Muncul dalam beberapa drama seperti
+        <i>Taxi Driver</i>, <i>Racket Boys</i>,
+        dan <i>Jirisan</i>.
+    </p>
+
+</div>
+
+
+<div class="timeline-item">
+
+    <h3>
+        2022 · Breakthrough
+    </h3>
+
+    <p>
+        Tampil dalam <i>Twenty-Five Twenty-One</i>
+        dan <i>Weak Hero Class 1</i>, yang membuat
+        namanya semakin dikenal.
+    </p>
+
+</div>
+
+
+<div class="timeline-item">
+
+    <h3>
+        2023 · New Colors
+    </h3>
+
+    <p>
+        Membintangi <i>Twinkling Watermelon</i>
+        dan <i>High Cookie</i>.
+    </p>
+
+</div>
+
+
+<div class="timeline-item">
+
+    <h3>
+        2025 · Continuing
+    </h3>
+
+    <p>
+        Melanjutkan karier dengan proyek seperti
+        <i>My Dearest Nemesis</i> dan
+        <i>Weak Hero Class 2</i>.
+    </p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FAVORITES -->
+
+<section>
+
+<div class="section-title">
+
+    <h2>
+        Why I Like His Acting
+    </h2>
+
+</div>
+
+
+<div class="favorite-box">
+
+    <div class="tag">
+        ✦ Expressive
+    </div>
+
+    <div class="tag">
+        ✦ Natural Acting
+    </div>
+
+    <div class="tag">
+        ✦ Youthful Characters
+    </div>
+
+    <div class="tag">
+        ✦ Funny Moments
+    </div>
+
+    <div class="tag">
+        ✦ Emotional Scenes
+    </div>
+
+    <div class="tag">
+        ✦ Different Roles
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- QUOTE -->
+
+<section>
+
+<div class="quote">
+
+    <h2>
+        “Every character<br>
+        tells a different story.”
+    </h2>
+
+    <p>
+        A little archive dedicated to Choi Hyun-wook.
+    </p>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+<footer>
+
+    Wintang Aulia Wulandari · Hyun-wook Archive
+
+</footer>
+
+</body>
+</html>
